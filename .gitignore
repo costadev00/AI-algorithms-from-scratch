@@ -23,6 +23,9 @@ wheels/
 # Debug files
 debug.py
 
+#Data files
+/data
+
 # IDE files
 .idea/
 .vscode/

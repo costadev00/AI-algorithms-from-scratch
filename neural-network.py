@@ -1,4 +1,4 @@
-#Here we are building a neural network with 2 hidden layers and 6 neurons in each layer.
+# Here we are building a neural network with 2 hidden layers and 6 neurons in each layer.
 # The input layer has 4 neurons and the output layer has 2 neurons. 
 # We are using the ReLU activation function for the hidden layers and the output layer has no activation function.
 # The forward function is defined to pass the input through the network and return the output.
