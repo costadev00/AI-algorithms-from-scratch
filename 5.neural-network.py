@@ -8,13 +8,13 @@ import torch.nn as nn
 class MyModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.first_layer = nn.Linear(4, 6)
-        self.second_layer = nn.Linear(6, 6)
-        self.output_layer = nn.Linear(6, 2)
+        self.first_layer = nn.Linear(2, 5)
+        # self.second_layer = nn.Linear(6, 6)
+        self.output_layer = nn.Linear(5, 1)
 
     def forward(self, x):
         x = torch.relu(self.first_layer(x))
-        x = torch.relu(self.second_layer(x))
+        # x = torch.relu(self.second_layer(x))
         output = self.output_layer(x)
         return output
 
