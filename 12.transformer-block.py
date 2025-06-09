@@ -39,7 +39,9 @@ class TransformerBlock(nn.Module):
                 context_length, attention_dim = k.shape[1], k.shape[2]
                 scores = scores / (attention_dim ** 0.5)
 
-                lower_triangular = torch.tril(torch.ones(context_length, context_length))
+                lower_triangular = torch.tril(
+                    torch.ones(context_length, context_length, device=embedded.device)
+                )
                 mask = lower_triangular == 0
                 scores = scores.masked_fill(mask, float('-inf'))
                 scores = nn.functional.softmax(scores, dim=2)
