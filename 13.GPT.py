@@ -19,7 +19,7 @@ class GPT(nn.Module):
         torch.manual_seed(0)
         embedded = self.word_embeddings(context)
         context_length = context.shape[1]
-        positions = torch.arange(context_length)
+        positions = torch.arange(context_length, device=context.device)
         embedded = embedded + self.position_embeddings(positions)
 
         raw_output = self.vocab_projection(self.final_norm(self.transformer_blocks(embedded)))
@@ -49,7 +49,9 @@ class GPT(nn.Module):
                     context_length, attention_dim = k.shape[1], k.shape[2]
                     scores = scores / (attention_dim ** 0.5)
 
-                    lower_triangular = torch.tril(torch.ones(context_length, context_length))
+                    lower_triangular = torch.tril(
+                        torch.ones(context_length, context_length, device=embedded.device)
+                    )
                     mask = lower_triangular == 0
                     scores = scores.masked_fill(mask, float('-inf'))
                     scores = nn.functional.softmax(scores, dim = 2)
