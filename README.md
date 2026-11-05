@@ -21,10 +21,10 @@ The code is designed for students curious about how models are built from the gr
 - **13.GPT.py** — simplified GPT model with embeddings, Transformer blocks and final projection.
 - **14.gpt-answers.py** — generates text using a trained GPT.
 - **extras/rnn.py** — additional recurrent neural network (RNN) example.
-- **fundamentals_ai_articles/** — a chronological collection of landmark AI papers.
+- **Fundamental_NLP_Papers/** — a chronological collection of landmark NLP and AI papers.
 - **Notebooks** (`GPT_FROM_SCRATCH.ipynb`, `fine-tuning-gemma.ipynb`, `sentiment_analysis_model.ipynb`) — interactive explorations of concepts shown in the code.
 
-## Why the `fundamentals_ai_articles` folder matters
+## Why the `Fundamental_NLP_Papers` folder matters
 
 Inside this folder you will find a timeline of pivotal publications that shaped the field of AI, from early neural network research all the way to state-of-the-art Large Language Models (LLMs). Reading these papers is strongly recommended for engineers who want to deeply understand how modern LLMs came to be.
 
